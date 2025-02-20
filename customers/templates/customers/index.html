@@ -1,0 +1,26 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>welcome to our ecommerce</h1>
+    <h2>Here is our Categories</h2>
+    <ul>
+        {% for category in categories %}
+        <li>{{category.name}}</li>
+        {% endfor %}
+    </ul>
+    <h2>Products</h2>
+    <div>
+        {% for product in products %}
+            <div style="border: 1px solid #ccc; padding: 10px; margin: 10px;">
+                <h3>{{ product.name }}</h3>
+                <p>{{ product.description }}</p>
+                <strong>Price: Ksh {{ product.price }}</strong>
+            </div>
+        {% endfor %}
+        </div>
+</body>
+</html>
