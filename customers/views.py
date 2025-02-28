@@ -23,5 +23,20 @@ def Create_post(request):
         Products.objects.create(name=name,description=description)
         return redirect('post_list')
     return render(request,'customers/index.html')
+def Update_post(request,post_id):
+    post=get_list_or_404(Products,id=post_id)
+    if request.method ==" POST":
+        post.name=request.POST['name']
+        post.description=request.POST['description']
+        post.save()
+        return redirect('post_list')
+    return render(request,'customers/index.html',{'post':post})
+def delete_post(request):
+    post=get_list_or_404(Products,id=post_list)
+    if request.method == 'POST':
+        post.delete()
+        return redirect('post_list')
+    return render(request,'customers/index.html',{'post':post})
+
 
 
