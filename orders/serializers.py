@@ -4,7 +4,7 @@ from .models import Notes
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model=Notes
-        fields=['url','title']
+        fields='__all__'
 
 class GroupSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
