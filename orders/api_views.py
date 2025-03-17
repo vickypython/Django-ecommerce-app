@@ -5,7 +5,6 @@ from rest_framework import decorators
 from rest_framework import status
 from .serializers import NotesSerializer
 from .models import Notes
-from django.contrib.admin import get_object_http404
 # Create your views here.
 @api_view(['GET'])
 def post_list(request):
